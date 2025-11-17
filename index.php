@@ -24,7 +24,7 @@ if (isset($_SESSION['user_id'])) {
     <header>
             <nav>
         <ul> 
-            <li><a href="index.php">Classement</a></li>
+            <li><a href="classement.php">Classement</a></li>
         </ul>
     </nav>
     </header>

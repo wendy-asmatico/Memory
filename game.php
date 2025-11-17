@@ -42,8 +42,10 @@ shuffle($deck);
 
     <body>
       <h1>Jeu de Mémoire - Niveau <?= htmlspecialchars($level) ?></h1>
+
 <section class="game-area">
 <div id="timer">00:00</div>
+
   <script src="./assets/js/timer.js"></script>
 
   <?php foreach ($deck as $index => $card): ?>
@@ -59,6 +61,17 @@ shuffle($deck);
     </div>
   <?php endforeach; ?>
 </section>
+
+<div id="scoreModal" style="display:none;">
+  <p>🎉 Bravo, vous avez trouvé toutes les paires !</p>
+  <p>Enregistrer votre score ?</p>
+  <form id="scoreForm" method="POST" action="./fonction/save_score.php">
+    <input type="hidden" name="level" value="<?= $level ?>">
+    <input type="hidden" name="time" id="scoreInput">
+    <button type="submit">Enregistrer</button>
+  </form>
+</div>
+
 
     </body>
 </html>

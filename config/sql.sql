@@ -10,14 +10,14 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE Scores (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    level INT NOT NULL,
-    time INT NOT NULL,
-    score INT NOT NULL,
-    achieved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+
+CREATE TABLE scores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  users_id INT NOT NULL,
+  level INT NOT NULL,
+  time INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (users_id) REFERENCES Users(id)
 );
 
 

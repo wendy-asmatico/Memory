@@ -1,6 +1,6 @@
 // timer.js
 document.addEventListener("DOMContentLoaded", () => {
-  let start = Date.now();
+window.start = Date.now();
 
   setInterval(() => {
     let elapsed = Date.now() - start;

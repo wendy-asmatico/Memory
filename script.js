@@ -59,7 +59,9 @@
   function checkWin() {
     if (matchedCount === cards.length) {
       setTimeout(() => {
-        alert("🎉 Bravo, tu as trouvé toutes les paires !");
+          const finalTimeSec = Math.floor((Date.now() - start) / 1000);
+          document.getElementById('scoreInput').value = finalTimeSec;
+        document.getElementById('scoreModal').style.display = 'block';
       }, 500);
     }
   }
@@ -71,12 +73,3 @@ function resetSelection() {
   lock = false;
 }
 
-// Vérifie si toutes les cartes ont été trouvées
-function checkWin() {
-  if (matchedCount === cards.length) {
-    setTimeout(() => {
-      alert("🎉 Bravo, tu as trouvé toutes les paires !");
-      // Ici tu pourras envoyer le score ou rediriger vers le classement
-    }, 500);
-  }
-}
