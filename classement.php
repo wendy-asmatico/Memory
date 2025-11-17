@@ -29,26 +29,97 @@ require_once './fonction/classement.php';
         <section class="banniere">
             <img src="./assets/img/Memory_logo.png" alt="Logo du site" class="logo">
         </section>
+
+        <section class="mes_classement">
+            <h2>Mon Classement</h2>
+        
+            <?php
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+                    $userScores = getUserScores($db, $userId);
+
+                    if (count($userScores) > 0) {
+                        echo "<table>";
+                        echo "<tr><th>Niveau</th><th>Temps</th></tr>";
+                        foreach ($userScores as $score) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($score['level']) . "</td>";
+                            echo "<td>" . htmlspecialchars(formatTime($score['time'])) . "</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "<p>Vous n'avez pas encore de scores enregistrés.</p>";
+                    }
+                } else {
+                    echo "<p>Veuillez vous connecter pour voir votre classement.</p>";
+                }
+            ?>
+        </section>
+        
         <section class="classement">
             <h2>Classement des Scores</h2>
-            <?php
-
-            if ($scores) {
-                echo "<table>
-                        <tr>
-                            <th>Utilisateur</th>
-                            <th>Niveau</th>
-                            <th>Temps (secondes)</th>
-                        </tr>";
-                foreach ($scores as $score) {
-                    echo "<tr>
-                            <td>" . htmlspecialchars($score['username']) . "</td>
-                            <td>" . htmlspecialchars($score['level']) . "</td>
-                            <td>" . htmlspecialchars($score['time']) . "</td>
-                        </tr>";
-                }
-                echo "</table>";
-            } else {
-                echo "<p>Aucun score enregistré pour le moment.</p>";
-            }
-            ?>
+                <h3>Niveau 3</h3>
+                <table>
+                    <tr>
+                        <th>Position</th>
+                        <th>Nom d'utilisateur</th>
+                        <th>Temps</th>
+                    </tr>
+                    <?php
+                    $position = 1;
+                    foreach ($scores3 as $score) {
+                        echo "<tr>";
+                        echo "<td>" . $position . "</td>";
+                        echo "<td>" . htmlspecialchars($score['username']) . "</td>";
+                        echo "<td>" . htmlspecialchars(formatTime($score['time'])) . "</td>";
+                        echo "</tr>";
+                        $position++;
+                    }
+                    ?>
+                </table>
+                <h3>Niveau 2</h3>
+                <table>
+                    <tr>
+                        <th>Position</th>
+                        <th>Nom d'utilisateur</th>
+                        <th>Temps</th>
+                    </tr>
+                <?php
+                    $position2 = 1;
+                    foreach ($scores2 as $score) {
+                        echo "<tr>";
+                        echo "<td>" . $position2 . "</td>";
+                        echo "<td>" . htmlspecialchars($score['username']) . "</td>";
+                        echo "<td>" . htmlspecialchars(formatTime($score['time'])) . "</td>";
+                        echo "</tr>";
+                        $position2++;
+                    }
+                    ?>
+                </table>
+                <h3>Niveau 1</h3>
+                <table>
+                    <tr>
+                        <th>Position</th>
+                        <th>Nom d'utilisateur</th>
+                        <th>Temps</th>
+                    </tr>
+                <?php
+                    $position3 = 1;
+                    foreach ($scores1 as $score) {
+                        echo "<tr>";
+                        echo "<td>" . $position3 . "</td>";
+                        echo "<td>" . htmlspecialchars($score['username']) . "</td>";
+                        echo "<td>" . htmlspecialchars(formatTime($score['time'])) . "</td>";
+                        echo "</tr>";
+                        $position3++;
+                    }
+                    ?>
+                </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Memory Game. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
