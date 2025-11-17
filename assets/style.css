@@ -1,0 +1,46 @@
+:root {
+    --primary-color: #FC4E63;
+    --secondary-color: #9c303dff;
+    --font-color: #ffffff;
+    --background-color: #b5a1a1ff;
+}
+
+
+* {
+    font-family: "Mark Pro";
+}
+
+body {
+    background-image: url('../assets/img/background.png') ;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 0;
+    color: var(--font-color);
+}
+
+.inscription {
+    background-color: var(--background-color);
+    border-radius: 15px;
+    padding: 20px;
+    width: 70vw;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inscription form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-color: #000000;
+}
+
+.inscription input {
+    width: 30vw;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #000000;
+}
