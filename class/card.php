@@ -43,7 +43,7 @@ class card {
 $cards_level1=[
     new card ('Abyss', './assets/img/level1/card_abyss.png', './assets/img/carto_recto.png', 1),
     new card ('Ascent', './assets/img/level1/card_ascent.png', './assets/img/carto_recto.png', 1),
-    new card ('Bind', './assets/img/level1/card_bind.png', './assets/img/carto_recto.png', 1),
+   new card ('Bind', './assets/img/level1/card_bind.png', './assets/img/carto_recto.png', 1),
     new card ('Breeze', './assets/img/level1/card_breeze.png', './assets/img/carto_recto.png', 1),
     new card ('Fracture', './assets/img/level1/card_fracture.png', './assets/img/carto_recto.png', 1),
     new card ('Haven', './assets/img/level1/card_haven.png', './assets/img/carto_recto.png', 1),

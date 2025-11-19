@@ -30,7 +30,6 @@ function getLeaderboardLevel3($db) {
                           JOIN users u ON s.users_id = u.id 
                         WHERE s.level = 3
                           ORDER BY s.time ASC
-                            
                           LIMIT 20");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

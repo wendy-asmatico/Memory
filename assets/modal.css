@@ -1,0 +1,121 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  width: 80%;
+  color: black;
+  outline: 2px solid #4b2323ff;
+  outline-offset: -5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre prononcée */
+  
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: auto;
+    gap: 10px;
+}
+
+.inscription h2, .connexion h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--primary-color);
+    font-size: 18px;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form_btn {
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.form_btn:hover {
+      background: var(--secondary-color);
+}
+
+.form_btn:active {
+    transform: translateY(2px);
+
+}
+
+.start_game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.start_game h3 {
+    color: var(--primary-color);
+}
+
+.finish {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.enregistrer {
+    background: var(--primary-color);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: auto;
+}
+
+.enregistrer:hover {
+      background: var(--secondary-color);
+}

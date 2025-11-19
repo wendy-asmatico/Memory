@@ -17,7 +17,6 @@ $stmt = $db->prepare("INSERT INTO scores (users_id, level, time) VALUES (:user_i
     $stmt->bindParam(':time', $time);
     if ($stmt->execute()) {
         return "Score enregistré avec succès !";
-        header("Location: ../classement.php");
         exit();
     } else {
         return "Erreur lors de la sauvegarde du classement. Veuillez réessayer.";
@@ -31,7 +30,7 @@ $level = intval($_POST['level'] ?? 1);
 $time = intval($_POST['time'] ?? 0);
 
     $message = score($db, $user_id, $level, $time);
-    echo "<script>alert('$message'); window.location.href = '../index.php';</script>";
+    echo "<script>alert('$message'); window.location.href = '../classement.php';</script>";
 }
 
 ?>

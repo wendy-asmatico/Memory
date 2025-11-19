@@ -5,12 +5,13 @@ require_once '../config/db.php';
 function registerUser($db, $username, $password) {
 
 
-    $stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
+    $stmt = $db->prepare("SELECT * FROM Users WHERE username = :username");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
-        return "Nom d'utilisateur déjà pris.";
+        return "Nom utilisateur déjà pris.";
+        exit();
     }
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
@@ -21,10 +22,10 @@ function registerUser($db, $username, $password) {
 
     if ($stmt->execute()) {
         return "Inscription réussie ! Vous pouvez maintenant vous connecter.";
-        header("Location: ../index.php");
         exit();
     } else {
         return "Erreur lors de l'inscription. Veuillez réessayer.";
+        exit();
     }
 }
 

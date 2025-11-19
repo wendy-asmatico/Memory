@@ -19,13 +19,13 @@ require_once './fonction/classement.php';
 </head>
 <body>
     <header>
-            <nav>
+            <nav class="nav-bar">
         <ul> 
-            <li><a href="index.php">Accueil</a></li>
+            <li><a href="index.php">&#127968; Accueil</a></li>
         </ul>
     </nav>
     </header>
-    <main>
+    <main class="main-classement">
         <section class="banniere">
             <img src="./assets/img/Memory_logo.png" alt="Logo du site" class="logo">
         </section>
@@ -119,7 +119,8 @@ require_once './fonction/classement.php';
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Memory Game. Tous droits réservés.</p>
+<p>&copy; 2025 - Memory Card - Valorant est une marque déposée de Riot Games, Inc.
+Ce site n’est pas affilié, soutenu ou approuvé par Riot Games.</p>
     </footer>
 </body>
 </html>

@@ -1,9 +1,21 @@
+.header-game {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
 .game-area {
   display: grid;
   grid-template-columns: repeat(auto-fill, 120px);
   gap: 12px;
   justify-content: center;
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .card {
@@ -20,7 +32,6 @@
   transition: transform 0.6s;
 }
 
-/* Quand .card a la classe flipped on tourne l'inner */
 .card.flipped .inner {
   transform: rotateY(180deg);
 }
@@ -45,4 +56,22 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* styles supplémentaires */
+
+#timer {
+  font-size: 35px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.quitter_button {
+  width: 200px;
+  height: 100px;
+  vertical-align: middle;
+}
+.quitter_button:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
 }

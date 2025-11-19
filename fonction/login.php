@@ -10,7 +10,8 @@ function loginUser($db, $username, $password) {
     $stmt->execute();
 
     if ($stmt->rowCount() === 0) {
-        return "Nom d'utilisateur ou mot de passe incorrect.";
+        return "Nom utilisateur ou mot de passe incorrect.";
+        exit();
     }
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -24,7 +25,8 @@ function loginUser($db, $username, $password) {
         header("Location: ../index.php");
         exit();
     } else {
-        return "Nom d'utilisateur ou mot de passe incorrect.";
+        return "Nom utilisateur ou mot de passe incorrect.";
+        exit();
     }
 }
 

@@ -1,16 +1,15 @@
 
   // Sélectionne toutes les cartes du plateau
   const cards = document.querySelectorAll('.card');
-  const sound = new Audio('./assets/flip_card.mp3');
-  const foundSound = new Audio('./assets/ace.mp3');
-
+  const sound = new Audio('./assets/son/flip_card.mp3');
+  const foundSound = new Audio('./assets/son/ace.mp3');
+  const finishSound = new Audio('./assets/son/jett-ace.mp3');
 
   // Variables pour le jeu
   let firstCard = null;
   let secondCard = null;
   let lock = false;
   let matchedCount = 0;
-
 
   // Gestion des cartes
   cards.forEach(card => {
@@ -61,11 +60,12 @@
       setTimeout(() => {
           const finalTimeSec = Math.floor((Date.now() - start) / 1000);
           document.getElementById('scoreInput').value = finalTimeSec;
+          finishSound.currentTime = 0;
+          finishSound.play();
         document.getElementById('scoreModal').style.display = 'block';
       }, 500);
     }
   }
-
 
 // Réinitialise les cartes sélectionnées
 function resetSelection() {
@@ -73,3 +73,10 @@ function resetSelection() {
   lock = false;
 }
 
+function quitgame() {
+    if (confirm("Vous allez quitter la partie en cours. Êtes-vous sûr ?")) {
+        window.location.href = "index.php";
+    } else {
+        return;
+    }
+}
